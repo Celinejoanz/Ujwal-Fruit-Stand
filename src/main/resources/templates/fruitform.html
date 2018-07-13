@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Spirax" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<form method="POST" action="/process" th:object="${fruit}" enctype="multipart/form-data">
+    <input type="hidden" th:field="*{id}"/>
+    <input type="hidden" th:field="*{day}"/>
+    Fruit:<input type="text" th:field="*{name}"/>
+    Hours:<input type="text" th:field="*{hours}"/>
+    <label>Picture</label>
+    <input type="file" name="file"/><br/><br/>
+    <input type="submit" value="Submit"/>
+</form>
+</div>
+</body>
+</html>

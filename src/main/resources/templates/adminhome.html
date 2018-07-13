@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed|Spirax" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="container">
+
+    <h3>Alter schedule</h3>
+
+    <div class="alert alert-info">
+        <div class="col-container">
+<table>
+    <tr>
+        <th>Day</th>
+        <th>Hours</th>
+        <th>Fruit</th>
+        <th>Picture</th>
+    </tr>
+    <tr th:each="fruit: ${fruits}">
+        <td>
+            <a th:href="@{/update/{id}(id=${fruit.id})}"><h3 th:text="${fruit.day}"></h3></a>
+        </td>
+        <td>
+            <a th:href="@{/update/{id}(id=${fruit.id})}"><h3 th:text="${fruit.hours}"></h3></a>
+        </td>
+        <td>
+            <a th:href="@{/update/{id}(id=${fruit.id})}"><h3 th:text="${fruit.name}"></h3></a>
+        </td>
+        <td>
+            <p th:if="${fruit.img}" !=" null">
+                <a th:href="@{/update/{id}(id=${fruit.id})}"><img th:src="${fruit.img}" width="500px" height="500px"/></a>
+            </p>
+        </td>
+    </tr>
+</table>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>
